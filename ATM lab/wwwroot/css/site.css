@@ -7,10 +7,52 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+/* Cash machine
+-------------------------------------------------- */
+
+.cash-machine {
+    width: 320px;
+    height: 400px;
+    text-align: center;
+}
+
+.screen {
+    margin: auto 50px 15px 20px;
+    width: 270px;
+    background-color: #a3a375;
+    height: 55px;
+    border-radius: 5px;
+    border: 2px solid #8a8a5c;
+    font: 46px sans-serif;
+}
+
+.keyboard {
+    height: 300px;
+    width: 306px;
+    display: inline-block;
+    margin-left: -10px;
+}
+
+.key {
+    margin: 4px 4px 5.7px 4px;
+    width: 54px;
+    height: 37px;
+    font: 20px sans-serif;
+    background-color: #ccccb3;
+    box-shadow: 2px 4.5px 3.8px 0 #0d0d0d, inset -1px -1px 13px 0 #808080;
+}
+
+.key:focus {
+    outline: none !important;
+}
+
+/* Cash machine
+-------------------------------------------------- */
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 @media (min-width: 768px) {
   html {
