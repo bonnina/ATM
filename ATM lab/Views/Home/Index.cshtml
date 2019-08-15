@@ -4,23 +4,35 @@
 
 <div class="text-center home">
     <form action="/" method="post" onsubmit="">
-        <div class="screen">
-            <input id="number" name="number" type="text" value="">
-        </div>
+        <div class="cash-machine">
+            <div class="screen">
+                <p id="number" name="number"></p>
+            </div>
 
-        <div class="keyboard">
-            <input class="key" type="button" value="1">
-            <input class="key" type="button" value="2">
-            <input class="key" type="button" value="3">
-            <input class="key" type="button" value="4">
-            <input class="key" type="button" value="5">
-            <input class="key" type="button" value="6">
-            <input class="key" type="button" value="7">
-            <input class="key" type="button" value="8">
-            <input class="key" type="button" value="9">
-            <input id="ok" class="key" type="submit" value="ok">
-            <input class="key" type="button" value="0">
-            <input class="key" type="button" value="clear" onclick="">
+            <div class="keyboard">
+                <input class="key" type="button" value="1">
+                <input class="key" type="button" value="2">
+                <input class="key" type="button" value="3">
+                <input class="key" type="button" value="4">
+                <input class="key" type="button" value="5">
+                <input class="key" type="button" value="6">
+                <input class="key" type="button" value="7">
+                <input class="key" type="button" value="8">
+                <input class="key" type="button" value="9">
+                <input id="ok" class="key" type="submit" value="ok">
+                <input class="key" type="button" value="0">
+                <input class="key" type="button" value="clear" onclick="onClear()">
+            </div>
         </div>
     </form>
 </div>
+
+@section scripts {
+    <script type="text/jscript">
+        function onClear() {
+            $("#number").text('')
+        }
+
+
+    </script>
+}
