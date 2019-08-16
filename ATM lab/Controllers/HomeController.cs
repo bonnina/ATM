@@ -10,8 +10,15 @@ namespace ATM_lab.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(string cardNumber)
         {
+            if (cardNumber.Length > 16)
+            {
+                ViewData["ErrMessage"] = "A card with this nmber does not exist";
+
+                return RedirectToAction("Error", "Home");
+            }
+
             return View();
         }
 
