@@ -3,22 +3,12 @@
 }
 
 <div class="text-center home">
-    <partial name="_AtmPartial"/>
+    <partial name="_AtmPartial" />
 </div>
 
 @section scripts {
+    <script src="~/js/site.js"></script>
     <script type="text/jscript">
-        function onClear() {
-            $("#number").text('');
-        }
-
-        function onKeyPress(value) {
-            var cardNumber = $("#number").text();
-            cardNumber += value;
-
-            $("#number").text(cardNumber);
-        }
-
         function onSubmit() {
             var cardNumber = $("#number").text();
 
