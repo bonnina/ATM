@@ -12,8 +12,7 @@ namespace ATM_lab.Models
         public string CardNumber { get; set; }
 
         [Required]
-        [RegularExpression(@"\d{4}", ErrorMessage = "PIN should be 4 digits")]
-        public string PIN { get; set; }
+        public PIN pin;
 
         [Required]
         public bool Blocked { get; set; }
