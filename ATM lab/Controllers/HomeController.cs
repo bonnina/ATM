@@ -22,7 +22,7 @@ namespace ATM_lab.Controllers
             {
                 ViewData["ErrMessage"] = "A card with this nmber does not exist";
 
-                return RedirectToAction("Error", "Home");
+                return View("Error");
             }
 
             return View();

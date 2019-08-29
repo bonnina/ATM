@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="text-center">
+    <h1>An error occured</h1>
+    <h2>@ViewData["ErrMessage"]</h2>
+</div>
+<div>
+    @Html.ActionLink("Home", "Index", "Home")
+</div>
