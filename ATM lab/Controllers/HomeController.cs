@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ATM_lab.Models;
+using System.Text.RegularExpressions;
 
 namespace ATM_lab.Controllers
 {
@@ -25,7 +26,10 @@ namespace ATM_lab.Controllers
         [HttpPost]
         public IActionResult Index(string cardNumber)
         {
-            if (cardNumber.Length != 16)
+            Regex regex = new Regex(@"\d{16}", RegexOptions.IgnorePatternWhitespace);
+            Match match = regex.Match(cardNumber);
+
+            if (!match.Success)
             {
                 ViewData["ErrMessage"] = "A card with this nmber does not exist";
 
