@@ -10,6 +10,13 @@ namespace ATM_lab.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ATMcontext _context;
+
+        public HomeController(ATMcontext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
