@@ -12,7 +12,8 @@ namespace ATM_lab.Models
         public string CardNumber { get; set; }
 
         [Required]
-        public PIN pin;
+        [StringLength(4)]
+        public string PIN { get; set; }
 
         [Required]
         public bool Blocked { get; set; }
