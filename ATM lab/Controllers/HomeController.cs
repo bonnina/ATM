@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ATM_lab.Models;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace ATM_lab.Controllers
 {
@@ -24,19 +25,26 @@ namespace ATM_lab.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string cardNumber)
+        public async Task<IActionResult> Index(string cardNumber)
         {
             Regex regex = new Regex(@"\d{16}", RegexOptions.IgnorePatternWhitespace);
-            Match match = regex.Match(cardNumber);
+            bool match = regex.IsMatch(cardNumber);
 
-            if (!match.Success)
+            if (!match)
             {
                 ViewData["ErrMessage"] = "A card with this nmber does not exist";
 
                 return View("Error");
             }
 
-            return View();
+            if (await _context.Card.AnyAsync(c => c.CardNumber == cardNumber))
+            {
+                return RedirectToAction("Pin", "Home");
+            } 
+
+            ViewData["ErrMessage"] = "A card with this nmber does not exist";
+
+            return View("Error");
         }
 
         public IActionResult Privacy()
