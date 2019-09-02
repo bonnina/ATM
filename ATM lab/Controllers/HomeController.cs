@@ -47,6 +47,14 @@ namespace ATM_lab.Controllers
             return View("Error");
         }
 
+        [HttpGet]
+        public IActionResult Pin (string cardNumber)
+        {
+            ViewData["CardNumber"] = cardNumber;
+
+            return View();
+        }
+        
         public IActionResult Privacy()
         {
             return View();
