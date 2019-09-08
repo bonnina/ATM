@@ -18,6 +18,13 @@ namespace ATM_lab.Controllers
         {
             _context = context;
         }
+        
+        public IActionResult ErrorRedirect(string errMessage = "Invalid credentials")
+        {
+            ViewData["ErrMessage"] = errMessage;
+
+            return RedirectToAction("Error", "Home");
+        }
 
         public IActionResult Index()
         {
@@ -32,21 +39,17 @@ namespace ATM_lab.Controllers
 
             if (!match)
             {
-                ViewData["ErrMessage"] = "A card with this nmber does not exist";
-
-                return View("Error");
+                return ErrorRedirect();
             }
 
             Card card = await _context.Card.FirstAsync(c => c.CardNumber == cardNumber);
-
-            if (!card.Blocked)
+            
+            if (card != null && !card.Blocked)
             {
                 return RedirectToAction("Pin", "Home");
-            } 
+            }
 
-            ViewData["ErrMessage"] = "A card with this nmber does not exist";
-
-            return View("Error");
+            return ErrorRedirect();
         }
 
         [HttpGet]
