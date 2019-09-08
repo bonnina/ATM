@@ -37,7 +37,9 @@ namespace ATM_lab.Controllers
                 return View("Error");
             }
 
-            if (await _context.Card.AnyAsync(c => c.CardNumber == cardNumber))
+            Card card = await _context.Card.FirstAsync(c => c.CardNumber == cardNumber);
+
+            if (!card.Blocked)
             {
                 return RedirectToAction("Pin", "Home");
             } 
