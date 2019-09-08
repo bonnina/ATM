@@ -16,7 +16,7 @@ namespace ATM_lab.Models
         public string PIN { get; set; }
 
         [Required]
-        public int LoginFail { get; set; }
+        public int FailedLogins { get; set; }
 
         [Required]
         public bool Blocked { get; set; }
