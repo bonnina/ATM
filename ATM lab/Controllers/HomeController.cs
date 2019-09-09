@@ -23,7 +23,7 @@ namespace ATM_lab.Controllers
         {
             ViewData["ErrMessage"] = errMessage;
 
-            return RedirectToAction("Error", "Home");
+            return RedirectToAction("ErrorRedirect", "Home");
         }
 
         public IActionResult Index()
@@ -61,6 +61,11 @@ namespace ATM_lab.Controllers
         }
         
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult ErrorRedirect()
         {
             return View();
         }
