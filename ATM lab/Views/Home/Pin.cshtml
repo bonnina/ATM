@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Pin";
+}
+
+<div class="text-center pin">
+    <partial name="_AtmPartial" />
+</div>
+
+@section scripts {
+    <script src="~/js/site.js"></script>
+    <script type="text/jscript">
+        function onSubmit() {
+            var cardNumber = new JavaScriptSerializer().Serialize(ViewData["CardNumber"]);
+            var pin = $("#number").text();
+
+            $.post('/Home/Pin', { cardNumber: cardNumber, pin: pin });
+        }
+    </script>
+}
+
