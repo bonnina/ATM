@@ -59,7 +59,37 @@ namespace ATM_lab.Controllers
 
             return View();
         }
-        
+
+        [HttpPost]
+        public async Task<IActionResult> Pin (string cardNumber, string pin)
+        {
+            if (String.IsNullOrEmpty(cardNumber) || String.IsNullOrEmpty(pin))
+            {
+                return ErrorRedirect();
+            }
+
+            Card card = await _context.Card.FirstAsync(c => c.CardNumber == cardNumber);
+
+            if (pin == card.PIN && !card.Blocked)
+            {
+                // redirect to operations screen
+            }
+
+            if (pin != card.PIN && !card.Blocked) 
+            {
+                card.FailedLogins++;
+
+                if (card.FailedLogins > 3)
+                {
+                    card.Blocked = true;
+                }
+
+                await _context.SaveChangesAsync();
+            }
+
+            return ErrorRedirect();
+        }
+
         public IActionResult Privacy()
         {
             return View();
