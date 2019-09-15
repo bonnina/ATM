@@ -46,7 +46,7 @@ namespace ATM_lab.Controllers
             
             if (card != null && !card.Blocked)
             {
-                return RedirectToAction("Pin", "Home");
+                return RedirectToAction("Pin", "Home", cardNumber);
             }
 
             return ErrorRedirect();
@@ -57,7 +57,7 @@ namespace ATM_lab.Controllers
         {
             ViewData["CardNumber"] = cardNumber;
 
-            return View();
+            return View("Pin", "Home");
         }
 
         [HttpPost]
