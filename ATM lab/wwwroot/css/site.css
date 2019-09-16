@@ -11,19 +11,31 @@ a.navbar-brand {
 -------------------------------------------------- */
 
 .cash-machine {
-    width: 320px;
+    width: 520px;
     height: 400px;
     text-align: center;
 }
 
 .screen {
     margin: auto 50px 15px 20px;
-    width: 270px;
+    width: 470px;
     background-color: #a3a375;
-    height: 55px;
-    border-radius: 5px;
+    height: 65px;
+    border-radius: 6px;
     border: 2px solid #8a8a5c;
     font: 46px sans-serif;
+    padding-top: 5px;
+}
+
+#body {
+    height: 300px;
+    width: 470px;
+    display: inline-block;
+    margin-left: -10px;
+    text-align: center;
+    background-color: #e0e0d1;
+    border-radius: 6px;
+    padding-top: 30px;
 }
 
 .keyboard {
