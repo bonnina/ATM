@@ -57,7 +57,7 @@ namespace ATM_lab.Controllers
         {
             ViewData["CardNumber"] = cardNumber;
 
-            return View("Pin", "Home");
+            return View();
         }
 
         [HttpPost]
