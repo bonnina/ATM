@@ -46,7 +46,7 @@ namespace ATM_lab.Controllers
             
             if (card != null && !card.Blocked)
             {
-                return RedirectToAction("Pin", "Home", cardNumber);
+                return RedirectToAction("Pin", "Home", new { cardNumber });
             }
 
             return ErrorRedirect();
