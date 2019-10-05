@@ -7,7 +7,7 @@ namespace ATM_lab.Models
 {
     public class Error
     {
-        public string Message { get; set; }
+        public string ErrMessage { get; set; }
 
         public string PrevUrl { get; set; }
     }
