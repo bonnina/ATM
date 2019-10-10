@@ -5,8 +5,10 @@
 
 <div class="text-center">
     <h1>An error occured</h1>
-    <h2>@ViewData["ErrMessage"]</h2>
+    <h2>@Model.ErrMessage</h2>
 </div>
 <div>
-    @Html.ActionLink("Home", "Index", "Home")
+    <a href="@Url.Action(Model.PrevUrl, "Home")" class="btn btn-large btn-block">
+        Back
+    </a>
 </div>
