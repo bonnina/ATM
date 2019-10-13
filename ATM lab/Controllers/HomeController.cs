@@ -21,7 +21,7 @@ namespace ATM_lab.Controllers
         
         public IActionResult ErrorRedirect(string errMessage = "Invalid credentials")
         {
-            return RedirectToAction("ErrorRedirect", "Home", new Error
+            return RedirectToAction("Error", "Home", new Error
             {
                 ErrMessage = errMessage,
                 PrevUrl = ControllerContext.RouteData.Values["action"].ToString()
@@ -97,15 +97,9 @@ namespace ATM_lab.Controllers
             return View();
         }
 
-        public IActionResult ErrorRedirect()
+        public IActionResult Error(Error error)
         {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(error);
         }
     }
 }
