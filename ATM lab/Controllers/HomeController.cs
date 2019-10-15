@@ -21,7 +21,7 @@ namespace ATM_lab.Controllers
         
         public IActionResult ErrorRedirect(string errMessage = "Invalid credentials")
         {
-            return RedirectToAction("Error", "Home", new Error
+            return RedirectToAction("Error", new Error
             {
                 ErrMessage = errMessage,
                 PrevUrl = ControllerContext.RouteData.Values["action"].ToString()
