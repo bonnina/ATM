@@ -36,16 +36,13 @@ namespace ATM_lab.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string cardNumber)
         {
-            Regex regex = new Regex(@"\d{16}", RegexOptions.IgnorePatternWhitespace);
-            bool match = regex.IsMatch(cardNumber);
-
-            if (!match)
+            if (!ModelState.IsValid)
             {
                 return ErrorRedirect();
             }
-
-            Card card = await _context.Card.FirstAsync(c => c.CardNumber == cardNumber);
             
+            Card card = await _context.Card.FirstOrDefaultAsync(c => c.CardNumber == cardNumber);
+
             if (card != null && !card.Blocked)
             {
                 return RedirectToAction("Pin", "Home", new { cardNumber });
