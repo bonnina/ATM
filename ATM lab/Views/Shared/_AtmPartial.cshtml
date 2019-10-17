@@ -1,6 +1,8 @@
-﻿<div class="cash-machine">
+﻿@model ATM_lab.Models.Card
+
+<div class="cash-machine">
     <div class="screen">
-        <p id="number" name="number"></p>
+        @Html.TextBoxFor(model => model.CardNumber, new { id = "number" })
     </div>
     <div id="body">
         <div class="keyboard">
@@ -10,7 +12,7 @@
             }
             <input class="key" type="button" value="clear" onclick="onClear()">
             <input class="key" type="button" value="0" onclick="onKeyPress(value)">
-            <input id="ok" class="key" type="submit" value="ok" onclick="onSubmit()">
+            <input id="ok" class="key" type="submit" value="ok">
         </div>
     </div>
 </div>
