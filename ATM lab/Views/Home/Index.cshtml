@@ -4,8 +4,12 @@
 }
 
 <div class="text-center home">
-    <partial name="_AtmPartial" />
-</div>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { onsubmit = "onSubmit()" }))
+    {
+        <partial name="_AtmPartial" />
+    }
+    </div>
+   
 
 @section scripts {
     <script src="~/js/site.js"></script>
