@@ -18,7 +18,7 @@ a.navbar-brand {
     margin-top: 5%;
 }
 
-.screen {
+#screen {
     margin: auto 50px 10px 20px;
     width: 470px;
     background-color: #a3a375;

@@ -1,7 +1,7 @@
 ﻿@model ATM_lab.Models.Card
 
 <div class="cash-machine">
-    <div class="screen">
+    <div id="screen">
         @Html.TextBoxFor(model => model.CardNumber, new { id = "number" })
     </div>
     <div id="body">
