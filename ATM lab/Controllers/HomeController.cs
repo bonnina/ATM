@@ -28,9 +28,11 @@ namespace ATM_lab.Controllers
             });
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var card = new Card();
+            return View(card);
         }
 
         [HttpPost]
