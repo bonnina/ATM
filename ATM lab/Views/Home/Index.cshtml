@@ -1,23 +1,13 @@
 ﻿@model ATM_lab.Models.Card
 @{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Card number";
 }
 
 <div class="text-center home">
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { onsubmit = "onSubmit()" }))
-    {
-        <partial name="_AtmPartial" />
-    }
-    </div>
-   
-
-@section scripts {
-    <script src="~/js/site.js"></script>
-    <script type="text/jscript">
-        function onSubmit() {
-            var cardNumber = $("#number").text();
-
-            $.post('/Home/Index', { cardNumber: cardNumber });
+    <div class="cash-machine">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            <partial name="_AtmPartial" />
         }
-    </script>
-}
+    </div>
+</div>
