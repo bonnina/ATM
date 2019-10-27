@@ -26,8 +26,16 @@ a.navbar-brand {
     border-radius: 6px;
     border: 2px solid #8a8a5c;
     font: 46px sans-serif;
-    padding-top: 35px;
+    padding-top: 30px;
     overflow: hidden;
+}
+
+#inputNumber {
+    background-color: #a3a375;
+    border: none;
+    font: 40px sans-serif;
+    padding: 0 15px;
+    letter-spacing: 3px;
 }
 
 #body {
