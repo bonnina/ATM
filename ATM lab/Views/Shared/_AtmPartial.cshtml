@@ -1,19 +1,16 @@
 ﻿@model ATM_lab.Models.Card
 
-<form>
-    <div id="screen" class="screen">@Html.TextBoxFor(model => model.CardNumber, new { @id = "inputNumber" })</div>
-    <div id="body">
-        <div class="keyboard">
-            @for (var i = 1; i <= 9; i++)
-            {
-                <input class="key" type="button" value="@i" onclick="onKeyPress(value)" />
-            }
-            <input class="key" type="button" value="clear" onclick="onClear()" />
-            <input class="key" type="button" value="0" onclick="onKeyPress(value)" />
-            <input id="Ok" class="key" type="submit" value="ok" />
-        </div>
+<div id="body">
+    <div class="keyboard">
+        @for (var i = 1; i <= 9; i++)
+        {
+            <input class="key" type="button" value="@i" onclick="onKeyPress(value)" />
+        }
+        <input class="key" type="button" value="clear" onclick="onClear()" />
+        <input class="key" type="button" value="0" onclick="onKeyPress(value)" />
+        <input id="Ok" class="key" type="submit" value="ok" />
     </div>
-</form>
+</div>
 
 @section scripts {
     <script src="~/js/site.js"></script>
