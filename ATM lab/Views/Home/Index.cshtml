@@ -7,7 +7,10 @@
     <div class="cash-machine">
         @using (Html.BeginForm("Index", "Home", FormMethod.Post))
         {
-            <partial name="_AtmPartial" />
+            <form>
+                <div id="screen" class="screen">@Html.TextBoxFor(model => model.CardNumber, new { @id = "inputNumber" })</div>
+                <partial name="_AtmPartial" />
+            </form>
         }
     </div>
 </div>
