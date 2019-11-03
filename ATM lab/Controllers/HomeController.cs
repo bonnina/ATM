@@ -56,9 +56,12 @@ namespace ATM_lab.Controllers
         [HttpGet]
         public IActionResult Pin (string cardNumber)
         {
-            ViewData["CardNumber"] = cardNumber;
+            Card card = new Card
+            {
+                CardNumber = cardNumber
+            };
 
-            return View();
+            return View(card);
         }
 
         [HttpPost]
