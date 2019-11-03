@@ -3,19 +3,18 @@
     ViewData["Title"] = "Pin";
 }
 
-<div class="text-center pin">
-    <partial name="_AtmPartial" />
-</div>
+<div class="text-center home">
+    <div class="cash-machine">
+        @using (Html.BeginForm("Pin", "Home", FormMethod.Post))
+        {
+        <form>
+            <div id="screen" class="screen">
+                 @Html.TextBoxFor(model => model.PIN, new { @id = "inputNumber" })
+            </div>
+                @Html.HiddenFor(model => model.CardNumber)
 
-@section scripts {
-    <script src="~/js/site.js"></script>
-    <script type="text/jscript">
-        function onSubmit() {
-            var cardNumber = new JavaScriptSerializer().Serialize(ViewData["CardNumber"]);
-            var pin = $("#number").text();
-
-            $.post('/Home/Pin', { cardNumber: cardNumber, pin: pin });
+            <partial name="_AtmPartial" />
+        </form>
         }
-    </script>
-}
-
+    </div>
+</div>
