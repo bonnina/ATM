@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace ATM_lab.Models
@@ -20,5 +21,7 @@ namespace ATM_lab.Models
 
         [Required]
         public bool Blocked { get; set; }
+
+        public virtual ICollection<Operation> Operations { get; set; }
     }
 }
