@@ -15,12 +15,12 @@ namespace ATM_lab.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<ATMcontext>>()))
             {
-                if (context.Card.Any())
+                if (context.Cards.Any())
                 {
                     return;   // DB has been seeded
                 }
 
-                context.Card.AddRange(
+                context.Cards.AddRange(
                     new Card
                     {
                         CardNumber = "5555444433332222",

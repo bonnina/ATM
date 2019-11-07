@@ -11,6 +11,6 @@ namespace ATM_lab.Models
         {
         }
 
-        public DbSet<Card> Card { get; set; }
+        public DbSet<Card> Cards { get; set; }
     }
 }

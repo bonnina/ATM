@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ATM_lab.Models;
-using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 
 namespace ATM_lab.Controllers
@@ -43,7 +42,7 @@ namespace ATM_lab.Controllers
                 return ErrorRedirect();
             }
             
-            Card card = await _context.Card.FirstOrDefaultAsync(c => c.CardNumber == cardNumber);
+            Card card = await _context.Cards.FirstOrDefaultAsync(c => c.CardNumber == cardNumber);
 
             if (card != null && !card.Blocked)
             {
@@ -72,7 +71,7 @@ namespace ATM_lab.Controllers
                 return ErrorRedirect();
             }
 
-            Card card = await _context.Card.FirstAsync(c => c.CardNumber == cardNumber);
+            Card card = await _context.Cards.FirstAsync(c => c.CardNumber == cardNumber);
 
             if (pin == card.PIN && !card.Blocked)
             {
