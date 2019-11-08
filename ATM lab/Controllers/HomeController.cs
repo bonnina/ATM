@@ -75,7 +75,7 @@ namespace ATM_lab.Controllers
 
             if (pin == card.PIN && !card.Blocked)
             {
-                // redirect to operations screen
+                return RedirectToAction("Index", "Operation", new { cardNumber });
             }
 
             if (pin != card.PIN && !card.Blocked) 
