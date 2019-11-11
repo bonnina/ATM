@@ -9,7 +9,7 @@ namespace ATM_lab.Models
         public int Id { get; set; }
 
         [Required]
-        [RegularExpression(@"\d{16}", ErrorMessage = "Card number should be 16 digits")]
+        [CreditCard]
         public string CardNumber { get; set; }
 
         [Required]
