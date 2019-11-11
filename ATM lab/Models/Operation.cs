@@ -12,6 +12,8 @@ namespace ATM_lab.Models
         public string CardNumber { get; set; }
 
         [Required]
+        public string Type { get; set; }
+
         public int Amount { get; set; }
 
         [Required]
