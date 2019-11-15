@@ -1,0 +1,17 @@
+﻿@model ATM_lab.Models.Operation
+@{
+    ViewData["Title"] = "Operations";
+}
+
+<div class="text-center operations">
+    <div class="menu-buttons col-md-6">
+        <a href="@Url.Action("Balance", "Operation")" class="btn btn-large btn-block">
+            Balance
+        </a>
+    </div>
+    <div class="menu-buttons col-md-6">
+        <a href="@Url.Action("Withdraw", "Operation")" class="btn btn-large btn-block">
+            Withdraw
+        </a>
+    </div>
+</div>
