@@ -1,7 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
+﻿a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
@@ -66,17 +63,22 @@ a.navbar-brand {
     box-shadow: 2px 4.5px 3.8px 0 #0d0d0d, inset -1px -1px 13px 0 #808080;
 }
 
-.key:focus {
+.button-back a {
+    margin-top: 5%;
+    color: #000000;
+}
+
+.key:focus,
+a:focus,
+a:active {
     outline: none !important;
+    text-decoration: none;
 }
 
 /* Cash machine
 -------------------------------------------------- */
-
-
 /* Operations
 -------------------------------------------------- */
-
 .operations {
     margin-top: 70px;
 }
