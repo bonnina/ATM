@@ -7,14 +7,19 @@
     <div class="cash-machine">
         @using (Html.BeginForm("Pin", "Home", FormMethod.Post))
         {
-        <form>
-            <div id="screen" class="screen">
-                 @Html.TextBoxFor(model => model.PIN, new { @id = "inputNumber" })
-            </div>
+            <form>
+                <div id="screen" class="screen">
+                    @Html.TextBoxFor(model => model.PIN, new { @id = "inputNumber" })
+                </div>
                 @Html.HiddenFor(model => model.CardNumber)
 
-            <partial name="_AtmPartial" />
-        </form>
+                <partial name="_AtmPartial" />
+            </form>
         }
     </div>
+</div>
+<div class="button-back text-left">
+    <a href="@Url.Action("Index", "Home")" class="btn btn-block">
+        back
+    </a>
 </div>
