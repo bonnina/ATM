@@ -1,4 +1,4 @@
-﻿var pin;
+﻿var pin = "";
 var backgroundColor = "#a3a375";
 
 function getInputNode() {
@@ -23,17 +23,19 @@ function isPinView() {
 function onKeyPress(value) {
     var input = getInputNode();
 
-    if (isPinView) {
+    if (isPinView()) {
         pin += value;
         input.value += '*';
 
         if (pin.length === 4)
             submitPin()
     }
+    else input.value += value;
 }
 
 function onClear() {
     var input = $("#inputNumber")[0];
 
     input.value = "";
+    pin = "";
 }
