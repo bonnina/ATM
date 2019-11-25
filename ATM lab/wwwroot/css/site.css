@@ -21,7 +21,7 @@
     background-color: #a3a375;
     height: 120px;
     border-radius: 6px;
-    border: 2px solid #8a8a5c;
+    border: 3px solid #8a8a5c;
     font: 46px sans-serif;
     padding-top: 30px;
     overflow: hidden;
@@ -81,6 +81,13 @@ a:active {
 -------------------------------------------------- */
 .operations {
     margin-top: 70px;
+    padding-left: 30px;
+    text-align: center;
+    background-color: #e0e0d1;
+    border-radius: 6px;
+    padding-top: 30px;
+    box-shadow: 0 0 #0d0d0d, inset -1px -1px 20px 0 #808080;
+    height: 450px;
 }
 
 .menu-buttons .btn,
