@@ -27,5 +27,16 @@ namespace ATM_lab.Controllers
 
             return View(operation);
         }
+
+        [HttpGet]
+        public IActionResult Withdraw(string cardNumber)
+        {
+            Operation operation = new Operation
+            {
+                CardNumber = cardNumber
+            };
+
+            return View(operation);
+        }
     }
 }
