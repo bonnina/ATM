@@ -17,6 +17,10 @@ namespace ATM_lab.Models
         public string PIN { get; set; }
 
         [Required]
+        [DataType(DataType.Currency)]
+        public decimal Balance{ get; set; }
+
+        [Required]
         public int FailedLogins { get; set; }
 
         [Required]
