@@ -29,14 +29,24 @@ namespace ATM_lab.Controllers
         }
 
         [HttpGet]
-        public IActionResult Withdraw(string cardNumber)
+        public async Task<IActionResult> Balance(string cardNumber)
         {
-            Operation operation = new Operation
-            {
-                CardNumber = cardNumber
-            };
+            Card card = await _context.Cards.FirstOrDefaultAsync(c => c.CardNumber == cardNumber);
 
-            return View(operation);
+            if (card != null)
+            {
+                Card cardInfo = new Card
+                {
+                    CardNumber = cardNumber,
+                    Balance = card.Balance,
+                };
+
+                return View(cardInfo);
+            }
+
+            string prevUrl = "Index";
+
+            return RedirectToAction("ErrorRedirect", "Home", new { prevUrl });
         }
     }
 }
