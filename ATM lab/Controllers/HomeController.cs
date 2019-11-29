@@ -18,12 +18,14 @@ namespace ATM_lab.Controllers
             _context = context;
         }
         
-        public IActionResult ErrorRedirect(string errMessage = "Invalid credentials")
+        public IActionResult ErrorRedirect(string prevUrl = null, string errMessage = "Invalid credentials")
         {
+            string url = prevUrl ?? ControllerContext.RouteData.Values["action"].ToString();
+
             return RedirectToAction("Error", new Error
             {
                 ErrMessage = errMessage,
-                PrevUrl = ControllerContext.RouteData.Values["action"].ToString()
+                PrevUrl = url,
             });
         }
 
