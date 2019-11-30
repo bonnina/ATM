@@ -20,12 +20,9 @@ namespace ATM_lab.Controllers
         [HttpGet]
         public IActionResult Index(string cardNumber)
         {
-            Operation operation = new Operation
-            {
-                CardNumber = cardNumber
-            };
-
-            return View(operation);
+            ViewData["CardNumber"] = cardNumber;
+            
+            return View();
         }
 
         [HttpGet]
