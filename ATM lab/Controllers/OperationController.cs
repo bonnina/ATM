@@ -43,10 +43,8 @@ namespace ATM_lab.Controllers
 
                 return View(cardInfo);
             }
-
-            string prevUrl = "Index";
-
-            return RedirectToAction("ErrorRedirect", "Home", new { prevUrl });
+            
+            return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index", errMessage = " " });
         }
     }
 }
