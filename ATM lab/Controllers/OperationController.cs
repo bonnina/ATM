@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ATM_lab.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using ATM_lab.Constants;
 
 namespace ATM_lab.Controllers
 {
@@ -37,6 +38,17 @@ namespace ATM_lab.Controllers
                     CardNumber = cardNumber,
                     Balance = card.Balance,
                 };
+
+                Operation operation = new Operation
+                {
+                    CardNumber = cardNumber,
+                    Type = OperationType.BALANCE,
+                    Timestamp = DateTime.UtcNow,
+                };
+
+                  _context.Operations.Add(operation);
+
+                  await _context.SaveChangesAsync();
 
                 return View(cardInfo);
             }
