@@ -102,6 +102,18 @@ a:active {
     box-shadow: 2px 4.5px 3.8px 0 #0d0d0d, inset -1px -1px 13px 0 #808080;
 }
 
+.balance-screen {
+    width: 920px;
+    background-color: #a3a375;
+    height: 320px;
+    border-radius: 6px;
+    border: 3px solid #8a8a5c;
+    padding: 40px;
+    font-size: 30px;
+    overflow: hidden;
+    margin: 50px auto auto auto;
+}
+
 /* Operations
 -------------------------------------------------- */
 /* Sticky footer styles

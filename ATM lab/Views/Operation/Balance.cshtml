@@ -3,31 +3,30 @@
     ViewData["Title"] = "Balance";
 }
 
-<h1>Balance</h1>
-
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.CardNumber)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.CardNumber)
-            </dd>
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.Balance)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.Balance)
-            </dd>
-            <dt class="col-sm-3">
-                <span> Date </span>
-            </dt>
-            <dd class="col-sm-9">
-                <span> @DateTime.Today </span>
-            </dd>
-        </dl>
+<div class="balance-screen">
+    <div class="row balance-text">
+        <div class="col-md-6 col-md-offset-3">
+            <dl class="row">
+                <dt class="col-sm-6">
+                    @Html.DisplayNameFor(model => model.CardNumber)
+                </dt>
+                <dd class="col-sm-6">
+                    @Html.DisplayFor(model => model.CardNumber)
+                </dd>
+                <dt class="col-sm-6">
+                    @Html.DisplayNameFor(model => model.Balance)
+                </dt>
+                <dd class="col-sm-6">
+                    @Html.DisplayFor(model => model.Balance)
+                </dd>
+                <dt class="col-sm-6">
+                    <span> Date </span>
+                </dt>
+                <dd class="col-sm-6">
+                    <span> @DateTime.Today </span>
+                </dd>
+            </dl>
+        </div>
     </div>
 </div>
 
