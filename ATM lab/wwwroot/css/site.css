@@ -114,6 +114,26 @@ a:active {
     margin: 50px auto auto auto;
 }
 
+.op-buttons {
+    justify-content: space-around;
+    background-color: #e0e0d1;
+    border-radius: 6px;
+    box-shadow: 2px 4.5px 3.8px 0 #0d0d0d, inset -1px -1px 13px 0 #808080;
+    margin: 20px 7px;
+    height: 160px;
+}
+
+.op-button {
+    color: black;
+    padding-top: 30px;
+    width: 200px;
+    height: 100px;
+    font: 50px sans-serif;
+    margin-top: 30px;
+    background-color: #ccccb3;
+    box-shadow: 2px 4.5px 3.8px 0 #0d0d0d, inset -1px -1px 13px 0 #808080;
+}
+
 /* Operations
 -------------------------------------------------- */
 /* Sticky footer styles
