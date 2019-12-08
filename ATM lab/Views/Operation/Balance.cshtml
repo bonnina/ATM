@@ -31,7 +31,8 @@
 </div>
 <div class="row text-center op-buttons">
     <div class="op-button col-md-3">
-        <a href="@Url.Action("Index", "Operation")" class="btn btn-large btn-block">
+        <a href="@Url.Action("Index", "Operation",
+                 new { cardNumber = @Model.CardNumber })" class="btn btn-large btn-block">
             Back
         </a>
     </div>
