@@ -123,9 +123,9 @@ a:active {
     height: 160px;
 }
 
-.op-button {
+.op-button a {
     color: black;
-    padding-top: 30px;
+    padding-top: 17px;
     width: 200px;
     height: 100px;
     font: 50px sans-serif;
