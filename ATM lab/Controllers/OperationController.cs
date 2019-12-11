@@ -55,5 +55,23 @@ namespace ATM_lab.Controllers
             
             return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index", errMessage = " " });
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Withdrawal(string cardNumber)
+        {
+            Card card = await _context.Cards.FirstOrDefaultAsync(c => c.CardNumber == cardNumber);
+
+            if (card != null && !card.Blocked)
+            {
+                Card cardInfo = new Card
+                {
+                    CardNumber = cardNumber
+                };
+
+                return View(cardInfo);
+            }
+
+            return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index", errMessage = " " });
+        }
     }
 }
