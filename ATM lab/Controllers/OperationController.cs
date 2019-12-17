@@ -63,12 +63,12 @@ namespace ATM_lab.Controllers
 
             if (card != null && !card.Blocked)
             {
-                Card cardInfo = new Card
+                Operation operation = new Operation
                 {
                     CardNumber = cardNumber
                 };
 
-                return View(cardInfo);
+                return View(operation);
             }
 
             return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index", errMessage = " " });
