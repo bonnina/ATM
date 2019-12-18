@@ -73,5 +73,37 @@ namespace ATM_lab.Controllers
 
             return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index", errMessage = " " });
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Withdrawal(string cardNumber, decimal amount)
+        {
+            Card card = await _context.Cards.FirstOrDefaultAsync(c => c.CardNumber == cardNumber);
+
+            if (card != null && !card.Blocked && card.Balance >= amount)
+            {
+                card.Balance -= amount;
+
+                Operation operation = new Operation
+                {
+                    CardNumber = cardNumber,
+                    Type = OperationType.WITHDRAWAL,
+                    Amount = amount,
+                    Timestamp = DateTime.UtcNow,
+                };
+
+                _context.Operations.Add(operation);
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Receipt", "Operation", new { cardNumber });
+            }
+
+            if (card.Balance < amount)
+            {
+                return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index", errMessage = "Insufficient Funds" });
+            }
+
+            return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index" });
+        }
     }
 }
