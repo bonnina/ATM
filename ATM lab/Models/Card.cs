@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ATM_lab.Models
 {
@@ -18,6 +18,7 @@ namespace ATM_lab.Models
 
         [Required]
         [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Balance{ get; set; }
 
         [Required]
