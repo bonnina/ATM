@@ -95,12 +95,22 @@ namespace ATM_lab.Controllers
 
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Receipt", "Operation", new { cardNumber });
+                return RedirectToAction("Receipt", "Operation", new { card });
             }
 
             if (card.Balance < amount)
             {
                 return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index", errMessage = "Insufficient Funds" });
+            }
+
+            return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index" });
+        }
+
+        [HttpGet]
+        public IActionResult Receipt(Card card)
+        {
+            if (card != null) {
+                return View(card);
             }
 
             return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index" });
