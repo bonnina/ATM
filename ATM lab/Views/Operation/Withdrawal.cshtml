@@ -9,7 +9,7 @@
         {
         <form>
             <div id="screen" class="screen">
-                @Html.TextBoxFor(model => model.Amount, new { @id = "inputNumber" })
+                @Html.TextBoxFor(model => model.Amount, new { @id = "inputNumber", @Value = " " })
             </div>
             @Html.HiddenFor(model => model.CardNumber)
 
