@@ -26,6 +26,7 @@ namespace ATM_lab.Models
                         CardNumber = "5555444433332222",
                         PIN = "5432",
                         FailedLogins = 0,
+                        Balance = 1000,
                         Blocked = false
                     },
                     new Card
@@ -33,6 +34,7 @@ namespace ATM_lab.Models
                         CardNumber = "4444333322221111",
                         PIN = "4321",
                         FailedLogins = 0,
+                        Balance = 200,
                         Blocked = false
                     }
                 );
