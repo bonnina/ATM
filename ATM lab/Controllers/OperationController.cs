@@ -77,6 +77,11 @@ namespace ATM_lab.Controllers
         [HttpPost]
         public async Task<IActionResult> Withdrawal(string cardNumber, decimal amount)
         {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index", errMessage = " " });
+            }
+
             Card card = await _context.Cards.FirstOrDefaultAsync(c => c.CardNumber == cardNumber);
 
             if (card != null && !card.Blocked && card.Balance >= amount)
