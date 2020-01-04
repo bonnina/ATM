@@ -100,7 +100,7 @@ namespace ATM_lab.Controllers
 
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Receipt", "Operation", new { card });
+                return RedirectToAction("Receipt", "Operation", new { card, amount });
             }
 
             if (card.Balance < amount)
@@ -112,10 +112,10 @@ namespace ATM_lab.Controllers
         }
 
         [HttpGet]
-        public IActionResult Receipt(Card card)
+        public IActionResult Receipt(Card card, decimal amount)
         {
             if (card != null) {
-                return View(card);
+                return View(new Tuple<Card, decimal>(card, amount));
             }
 
             return RedirectToAction("ErrorRedirect", "Home", new { prevUrl = "Index" });
