@@ -23,7 +23,7 @@
                     <span> Date </span>
                 </dt>
                 <dd class="col-sm-6">
-                    <span> @DateTime.Today </span>
+                    <span> @DateTime.UtcNow.ToLocalTime() </span>
                 </dd>
             </dl>
         </div>
