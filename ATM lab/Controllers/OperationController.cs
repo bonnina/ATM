@@ -100,7 +100,7 @@ namespace ATM_lab.Controllers
 
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Receipt", "Operation", new { card, amount });
+                return RedirectToAction("Receipt", "Operation", new { cardNumber, amount });
             }
 
             if (card.Balance < amount)
@@ -112,8 +112,10 @@ namespace ATM_lab.Controllers
         }
 
         [HttpGet]
-        public IActionResult Receipt(Card card, decimal amount)
+        public async Task<IActionResult> Receipt(string cardNumber, decimal amount)
         {
+            Card card = await _context.Cards.FirstOrDefaultAsync(c => c.CardNumber == cardNumber);
+
             if (card != null) {
                 return View(new Tuple<Card, decimal>(card, amount));
             }
