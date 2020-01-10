@@ -3,35 +3,48 @@
     ViewData["Title"]="Receipt" ;
 }
 
-<div class="wrapper">
-    <div class="receipt">
-        <div class="col-md-6">
-            <dl class="row">
-                <dt class="col-sm-6">
-                    @Html.DisplayNameFor(model => model.Item1.CardNumber)
-                </dt>
-                <dd class="col-sm-6">
-                    @Html.DisplayFor(model => model.Item1.CardNumber)
-                </dd>
-                <dt class="col-sm-6">
-                    @Html.DisplayNameFor(model => model.Item1.Balance)
-                </dt>
-                <dd class="col-sm-6">
-                    @Html.DisplayFor(model => model.Item1.Balance)
-                </dd>
-                <dt class="col-sm-6">
-                    <span> Withdrawn amount </span>
-                </dt>
-                <dd class="col-sm-6">
-                    @Html.DisplayFor(model => model.Item2)
-                </dd>
-                <dt class="col-sm-6">
-                    <span> Time </span>
-                </dt>
-                <dd class="col-sm-6">
-                    <span> @DateTime.UtcNow.ToLocalTime() </span>
-                </dd>
-            </dl>
+    <div class="wrapper">
+        <div class="receipt">
+            <div class="col-md-6">
+                <dl class="row">
+                    <dt class="col-sm-6">
+                        @Html.DisplayNameFor(model => model.Item1.CardNumber)
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.Item1.CardNumber)
+                    </dd>
+                    <dt class="col-sm-6">
+                        @Html.DisplayNameFor(model => model.Item1.Balance)
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.Item1.Balance)
+                    </dd>
+                    <dt class="col-sm-6">
+                        <span> Withdrawn amount </span>
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.Item2)
+                    </dd>
+                    <dt class="col-sm-6">
+                        <span> Time </span>
+                    </dt>
+                    <dd class="col-sm-6">
+                        <span> @DateTime.UtcNow.ToLocalTime() </span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row text-center op-buttons">
+            <div class="op-button col-md-3">
+                <a href="@Url.Action("Withdrawal", "Operation",
+                 new { cardNumber = @Model.Item1.CardNumber })" class="btn btn-large btn-block">
+                    back
+                </a>
+            </div>
+            <div class="op-button col-md-3">
+                <a href="@Url.Action("Index", "Home")" class="btn btn-large btn-block">
+                    exit
+                </a>
+            </div>
         </div>
     </div>
-</div>
