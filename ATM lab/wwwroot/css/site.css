@@ -1,4 +1,6 @@
-﻿a.navbar-brand {
+﻿@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+
+a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
@@ -151,21 +153,25 @@ a:active {
 
 .receipt {
     width: 500px;
-    height: 80%;
+    height: 70%;
     background: #ffffff;
     margin: 20px auto;
     box-shadow: 5px 5px 19px #ccc;
     padding: 60px 20px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
 }
 
-/* Operations
+    .receipt dt.col-sm-6 {
+        width: 30vw;
+    }
+    /* Operations
 -------------------------------------------------- */
-
-/* Sticky footer styles
+    /* Sticky footer styles
 -------------------------------------------------- */
-html {
-    font-size: 14px;
-}
+    html {
+        font-size: 14px;
+    }
 @media (min-width: 768px) {
   html {
     font-size: 16px;
