@@ -126,6 +126,13 @@ a:active {
     height: 160px;
 }
 
+.op-buttons.sm {
+    margin: 20px auto;
+    height: 80px;
+    width: 500px;
+    padding-left: 0;
+}
+
 .op-button a {
     color: black;
     padding-top: 17px;
@@ -133,6 +140,16 @@ a:active {
     height: 100px;
     font: 50px sans-serif;
     margin-top: 30px;
+    background-color: #ccccb3;
+    box-shadow: 2px 4.5px 3.8px 0 #0d0d0d, inset -1px -1px 13px 0 #808080;
+}
+
+.op-button.sm a {
+    width: 120px;
+    height: 50px;
+    font: 30px sans-serif;
+    margin-top: 15px;
+    padding-top: 7px;
     background-color: #ccccb3;
     box-shadow: 2px 4.5px 3.8px 0 #0d0d0d, inset -1px -1px 13px 0 #808080;
 }
