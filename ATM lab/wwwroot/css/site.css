@@ -129,7 +129,7 @@ a:active {
 .op-buttons.sm {
     margin: 20px auto;
     height: 80px;
-    width: 500px;
+    width: 505px;
     padding-left: 0;
 }
 
@@ -149,6 +149,7 @@ a:active {
     height: 50px;
     font: 30px sans-serif;
     margin-top: 15px;
+    margin-left: -10px;
     padding-top: 7px;
     background-color: #ccccb3;
     box-shadow: 2px 4.5px 3.8px 0 #0d0d0d, inset -1px -1px 13px 0 #808080;
