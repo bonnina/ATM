@@ -144,6 +144,11 @@ a:active {
     box-shadow: 2px 4.5px 3.8px 0 #0d0d0d, inset -1px -1px 13px 0 #808080;
 }
 
+.op-button.sm.single {
+    margin-top: 60px;
+    margin-left: 43%;
+}
+
 .op-button.sm a {
     width: 120px;
     height: 50px;
