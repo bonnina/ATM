@@ -8,7 +8,8 @@
         @using (Html.BeginForm("Pin", "Home", FormMethod.Post))
         {
             <form>
-                <div id="screen" class="screen">
+                <div id="screen" class="screen text-left">
+                    <div id="screenText">PIN: </div>
                     @Html.TextBoxFor(model => model.PIN, new { @id = "inputNumber" })
                 </div>
                 @Html.HiddenFor(model => model.CardNumber)
