@@ -25,15 +25,19 @@ a.navbar-brand {
     border-radius: 6px;
     border: 3px solid #8a8a5c;
     font: 46px sans-serif;
-    padding-top: 30px;
+    padding-top: 10px;
     overflow: hidden;
+}
+
+#screenText {
+    padding: 0 20px;
 }
 
 #inputNumber {
     background-color: #a3a375;
     border: none;
     font: 40px sans-serif;
-    padding: 0 15px;
+    padding: 0 20px;
     letter-spacing: 3px;
 }
 
