@@ -29,8 +29,9 @@ a.navbar-brand {
     overflow: hidden;
 }
 
-#screenText {
+.screenText {
     padding: 0 20px;
+    font-size: 40px;
 }
 
 #inputNumber {
