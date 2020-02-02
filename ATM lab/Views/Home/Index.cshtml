@@ -8,7 +8,10 @@
         @using (Html.BeginForm("Index", "Home", FormMethod.Post))
         {
             <form>
-                <div id="screen" class="screen">@Html.TextBoxFor(model => model.CardNumber, new { @id = "inputNumber" })</div>
+                <div id="screen" class="screen text-left">
+                    <div class="screenText">CARD NUMBER: </div>
+                    @Html.TextBoxFor(model => model.CardNumber, new { @id = "inputNumber" })
+                </div>
                 <partial name="_AtmPartial" />
             </form>
         }
